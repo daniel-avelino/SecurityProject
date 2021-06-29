@@ -1,7 +1,5 @@
 package com.security.feign;
 
-import java.util.List;
-
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,5 +8,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface FeignConsumer {
 
 	@GetMapping
-	public List<FeignEntity> getCasesByCountry(@RequestParam("country") String country);
+	public FeignEntity getCasesByCountry(@RequestParam("country") String country);
 }
