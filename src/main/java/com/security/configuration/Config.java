@@ -26,7 +26,7 @@ public class Config implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		User user = new User(null, "Daniel", "daniel@daniel", encoder.encode("1234"));
-		Role role = new Role(null, "Admin");
+		Role role = new Role(null, "ROLE_ADMIN");
 		roleRepository.saveAndFlush(role);
 		user.getRoles().add(role);
 		repository.saveAndFlush(user);
