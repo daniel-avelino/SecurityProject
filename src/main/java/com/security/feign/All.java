@@ -10,15 +10,26 @@ public class All implements Serializable {
 	private Integer recovered;
 	private Integer deaths;
 	private Integer population;
+	private String updated;
 
 	public All() {
 	}
 
-	public All(Integer confirmed, Integer recovered, Integer deaths, Integer population) {
+	public All(Integer confirmed, Integer recovered, Integer deaths, Integer population, String updated) {
+		super();
 		this.confirmed = confirmed;
 		this.recovered = recovered;
 		this.deaths = deaths;
 		this.population = population;
+		this.updated = updated;
+	}
+
+	public String getUpdated() {
+		return updated;
+	}
+
+	public void setUpdated(String updated) {
+		this.updated = updated;
 	}
 
 	public Integer getConfirmed() {
@@ -58,5 +69,5 @@ public class All implements Serializable {
 		return "FeignEntity [confirmed=" + confirmed + ", recovered=" + recovered + ", deaths=" + deaths
 				+ ", population=" + population + "]";
 	}
-	
+
 }

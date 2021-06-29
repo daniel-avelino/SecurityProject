@@ -17,6 +17,8 @@ import javax.persistence.Table;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.security.dto.UserDTO;
+
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable, UserDetails {
@@ -32,9 +34,7 @@ public class User implements Serializable, UserDetails {
 	private String password;
 
 	@ManyToMany
-	@JoinTable(name = "tb_user_role",
-	joinColumns = @JoinColumn(name = "user_id"), 
-	inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(name = "tb_user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
 	public User() {
@@ -45,6 +45,13 @@ public class User implements Serializable, UserDetails {
 		this.name = name;
 		this.email = email;
 		this.password = password;
+	}
+
+	public User(UserDTO dto) {
+		this.id = dto.getId();
+		this.name = dto.getName();
+		this.email = dto.getEmail();
+		this.password = dto.getPassword();
 	}
 
 	public Long getId() {
