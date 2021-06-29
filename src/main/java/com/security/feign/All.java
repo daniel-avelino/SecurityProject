@@ -12,16 +12,52 @@ public class All implements Serializable {
 	private Integer population;
 	private String updated;
 
+	private Integer administered;
+	private Integer people_vaccinated;
+	private Integer people_partially_vaccinated;
+
 	public All() {
 	}
 
 	public All(Integer confirmed, Integer recovered, Integer deaths, Integer population, String updated) {
-		super();
 		this.confirmed = confirmed;
 		this.recovered = recovered;
 		this.deaths = deaths;
 		this.population = population;
 		this.updated = updated;
+	}
+
+	public All(Integer population, String updated, Integer administered, Integer people_vaccinated,
+			Integer people_partially_vaccinated) {
+		this.population = population;
+		this.updated = updated;
+		this.administered = administered;
+		this.people_vaccinated = people_vaccinated;
+		this.people_partially_vaccinated = people_partially_vaccinated;
+	}
+
+	public Integer getAdministered() {
+		return administered;
+	}
+
+	public void setAdministered(Integer administered) {
+		this.administered = administered;
+	}
+
+	public Integer getPeople_vaccinated() {
+		return people_vaccinated;
+	}
+
+	public void setPeople_vaccinated(Integer people_vaccinated) {
+		this.people_vaccinated = people_vaccinated;
+	}
+
+	public Integer getPeople_partially_vaccinated() {
+		return people_partially_vaccinated;
+	}
+
+	public void setPeople_partially_vaccinated(Integer people_partially_vaccinated) {
+		this.people_partially_vaccinated = people_partially_vaccinated;
 	}
 
 	public String getUpdated() {

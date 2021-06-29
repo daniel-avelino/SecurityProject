@@ -3,6 +3,7 @@ package com.security.dto;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.security.entities.User;
 
@@ -33,6 +34,8 @@ public class UserDTO implements Serializable {
 		this.name = user.getName();
 		this.email = user.getEmail();
 		this.password = user.getPassword();
+		this.roles = user.getRoles().stream().map(x -> new RoleDTO(x.getId(), x.getRole())).collect(Collectors.toSet());
+
 	}
 
 	public Long getId() {

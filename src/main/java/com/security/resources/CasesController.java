@@ -20,4 +20,10 @@ public class CasesController {
 	public ResponseEntity<?> getCases(@RequestParam("country") String country) {
 		return ResponseEntity.ok().body(feign.getCasesByCountry(country));
 	}
+	
+
+	@GetMapping(path = "vaccines")
+	public ResponseEntity<?> getVaccines(@RequestParam("country") String country) {
+		return ResponseEntity.ok().body(feign.getVaccinesByCountry(country));
+	}
 }

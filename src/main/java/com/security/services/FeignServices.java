@@ -17,6 +17,10 @@ public class FeignServices {
 		return feign.getCasesByCountry(stringValidator(country));
 	}
 
+	public FeignEntity getVaccinesByCountry(String country) {
+		return feign.getVaccinesByCountry(stringValidator(country));
+	}
+
 	public String stringValidator(String country) {
 		String lowerCountry = country.toLowerCase();
 		String[] words = lowerCountry.split(" ");
